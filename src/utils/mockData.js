@@ -1,65 +1,7 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-
-const Header = () => {
-  return (
-    <div className="header">
-      <div className="logo-container">
-        <img
-          className="logo"
-          src="https://www.logodesign.net/logo/smoking-burger-with-lettuce-3624ld.png"
-        />
-      </div>
-      <div class="nav-items">
-        <ul>
-          <li>Home</li>
-          <li>About us</li>
-          <li>Contact Us</li>
-          <li>Cart</li>
-        </ul>
-      </div>
-    </div>
-  );
-};
-
-const RestaurantCard = (props) => {
-  const { resData } = props;
-  const {
-    cloudinaryImageId,
-    name,
-    cuisines,
-    avgRating,
-    costForTwo,
-    deliveryTime,
-  } = resData?.data;
-  return (
-    <div
-      className="res-card"
-      style={{
-        backgroundColor: "#f0f0f0",
-      }}
-    >
-      <img
-        className="res-logo"
-        alt="res-logo"
-        src={
-          "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" +
-          cloudinaryImageId
-        }
-      />
-      <h3>{name}</h3>
-      <h4>{cuisines.join(", ")}</h4>
-      <h4>{avgRating} stars</h4>
-      <h4>{costForTwo / 100} For TWO</h4>
-      <h4>{deliveryTime} minutes</h4>
-    </div>
-  );
-};
-
 const resList = [
   {
     type: "restaurant",
-    data: {
+    info: {
       type: "F",
       id: "74453",
       name: "Domino's Pizza",
@@ -179,7 +121,7 @@ const resList = [
   },
   {
     type: "restaurant",
-    data: {
+    info: {
       type: "F",
       id: "410476",
       name: "The Brooklyn Creamery - Healthy Ice Cream",
@@ -299,7 +241,7 @@ const resList = [
   },
   {
     type: "restaurant",
-    data: {
+    info: {
       type: "F",
       id: "81094",
       name: "Richie Rich Juices & Shakes",
@@ -419,7 +361,7 @@ const resList = [
   },
   {
     type: "restaurant",
-    data: {
+    info: {
       type: "F",
       id: "311443",
       name: "Siddhi Icecream & Thick Shake",
@@ -539,7 +481,7 @@ const resList = [
   },
   {
     type: "restaurant",
-    data: {
+    info: {
       type: "F",
       id: "307070",
       name: "Pizza Pie",
@@ -659,7 +601,7 @@ const resList = [
   },
   {
     type: "restaurant",
-    data: {
+    info: {
       type: "F",
       id: "76858",
       name: "Feeling Hungry",
@@ -779,7 +721,7 @@ const resList = [
   },
   {
     type: "restaurant",
-    data: {
+    info: {
       type: "F",
       id: "617279",
       name: "Malaxmi Fast Food",
@@ -898,7 +840,7 @@ const resList = [
   },
   {
     type: "restaurant",
-    data: {
+    info: {
       type: "F",
       id: "469264",
       name: "Dessert House",
@@ -1018,7 +960,7 @@ const resList = [
   },
   {
     type: "restaurant",
-    data: {
+    info: {
       type: "F",
       id: "395204",
       name: "McDonald's Gourmet Burger Collection",
@@ -1139,7 +1081,7 @@ const resList = [
   },
   {
     type: "restaurant",
-    data: {
+    info: {
       type: "F",
       id: "193541",
       name: "Behrouz Biryani",
@@ -1268,7 +1210,7 @@ const resList = [
   },
   {
     type: "restaurant",
-    data: {
+    info: {
       type: "F",
       id: "475510",
       name: "Momos House",
@@ -1388,7 +1330,7 @@ const resList = [
   },
   {
     type: "restaurant",
-    data: {
+    info: {
       type: "F",
       id: "127596",
       name: "Sabir Chicken",
@@ -1508,7 +1450,7 @@ const resList = [
   },
   {
     type: "restaurant",
-    data: {
+    info: {
       type: "F",
       id: "64656",
       name: "Mahesh Pav Bhaji",
@@ -1628,7 +1570,7 @@ const resList = [
   },
   {
     type: "restaurant",
-    data: {
+    info: {
       type: "F",
       id: "255204",
       name: "The Dango Cake Shop",
@@ -1747,7 +1689,7 @@ const resList = [
   },
   {
     type: "restaurant",
-    data: {
+    info: {
       type: "F",
       id: "664656",
       name: "Cheezylicious Cafe",
@@ -1874,27 +1816,4 @@ const resList = [
   },
 ];
 
-const Body = () => {
-  return (
-    <div className="Body">
-      <div className="search">Search</div>
-      <div className="res-container">
-        {resList.map((restaurant) => (
-          <RestaurantCard key={restaurant.data.id} resData={restaurant} />
-        ))}
-      </div>
-    </div>
-  );
-};
-
-const AppLayout = () => {
-  return (
-    <div className="app">
-      <Header />
-      <Body />
-    </div>
-  );
-};
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<AppLayout />);
+export default resList;
