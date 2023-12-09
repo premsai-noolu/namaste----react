@@ -21,7 +21,6 @@ class About extends React.Component {
         <h2>This is namste React webSeries</h2>
 
         <UserClass name={"Fisrst"} location={"Bangalore"} />
-        <UserClass name={"Second"} location={"vskptnam"} />
       </div>
     );
   }

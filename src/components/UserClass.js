@@ -7,31 +7,29 @@ class UserClass extends React.Component {
     console.log(this.props.name + "child Constructor");
 
     this.state = {
-      count: 0,
+      userInfo: {
+        login: "Dummy",
+        id: "Default",
+        avatar_url: "https://dummy-photo.com",
+      },
     };
   }
 
-  componentDidMount() {
-    console.log(this.props.name + "child component did mount");
+  async componentDidMount() {
+    const data = await fetch("https://api.github.com/users/premsai-noolu");
+    const json = await data.json();
+
+    this.setState({
+      userInfo: json,
+    });
   }
   render() {
-    console.log("child Rendered");
-    const { name, location } = this.props;
-    const { count } = this.state;
+    const { login, id, avatar_url } = this.state.userInfo;
     return (
       <div className="user-card">
-        <h1>Count: {count}</h1>
-        <button
-          onClick={() => {
-            this.setState({
-              count: this.state.count + 1,
-            });
-          }}
-        >
-          Count Increase
-        </button>
-        <h2>Name: {name}</h2>
-        <h3>Location: {location}</h3>
+        <img src={avatar_url} />
+        <h2>Name: {login}</h2>
+        <h3>Id: {id}</h3>
         <h4>contact: premsainoolu01@gmail.com</h4>
       </div>
     );
