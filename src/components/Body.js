@@ -25,6 +25,7 @@ const Body = () => {
     console.log(
       json.data.cards[5].card.card.gridElements.infoWithStyle.restaurants
     );
+
     setListOfRestaurants(
       json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
