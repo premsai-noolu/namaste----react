@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { LOGO_URL } from "../utils/constants";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import About from "./About";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
@@ -37,7 +37,7 @@ const Header = () => {
             <Link to="./grocery">Grocery</Link>
           </li>
           <li className="px-4 font-bold">
-            <Link to="./cart">Cart -({cartItems.length} items) </Link>
+            <Link to="./cart">Cart - ({cartItems.length} items) </Link>
           </li>
           <button
             className="login"
