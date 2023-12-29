@@ -77,14 +77,19 @@ const Body = () => {
             className="px-4 py-2 bg-gray-100 rounded-lg"
             onClick={() => {
               const filteredList = listOfRestaurants.filter(
-                (res) => res.info.avgRating > 4.0
+                (res) => res.info.avgRating > 4.5
               );
-              setListOfRestaurants(filteredList);
+              {
+                /*setListOfRestaurants(filteredList);*/
+              }
+              setFilteredRestaurant(filteredList);
             }}
           >
             Top Rated Restaurants
           </button>
         </div>
+
+        {/*
         <div className="search m-4 p-4 flex items-center">
           <label>UserName : </label>
           <input
@@ -94,6 +99,7 @@ const Body = () => {
             onChange={(e) => setUserName(e.target.value)}
           />
         </div>
+          */}
       </div>
       <div className="flex flex-wrap">
         {filteredRestaurant.map((restaurant) => (
