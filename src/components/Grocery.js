@@ -1,10 +1,10 @@
 const Grocery = () => {
   return (
-    <div className="bg-pink-400">
-      <div className="bg-green-300">
-        <h1 className="p-2 flex justify-center">hello</h1>
-        <h2 className="p-2">byee</h2>
-      </div>
+    <div className="m-4">
+      <p>
+        In future this will be replaced with Grocery items. Until then the
+        explore the restaurant food items
+      </p>
     </div>
   );
 };
