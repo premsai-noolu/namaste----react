@@ -24,15 +24,15 @@ const Body = () => {
     );
     const json = await data.json();
     console.log(
-      json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants
+      json.data.cards[5].card.card.gridElements.infoWithStyle.restaurants
     );
 
     setListOfRestaurants(
-      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
 
     setFilteredRestaurant(
-      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
   const onlineStatus = useOnlineStatus();
@@ -45,6 +45,7 @@ const Body = () => {
   const { loggedInUser, setUserName } = useContext(UserContext);
 
   if (listOfRestaurants.length === 0) {
+    console.log("shimmer......");
     return <Shimmer />;
   }
 

@@ -19,12 +19,12 @@ const Header = () => {
   return (
     <div className="flex justify-between shadow-lg bg-pink-50 sm:bg-yellow-100 lg:bg-green-100">
       <div className="logo-container">
-        <img className="w-36 mx-4" src={LOGO_URL} />
-        <p className="font-bold px-8 mb-2 text-red-900 text-xl">Food Hunt</p>
+        <img className="w-24 mx-4" src={LOGO_URL} />
+        <p className="font-bold px-8 mb-2 text-red-900 text-xl">Foodify</p>
       </div>
       <div className="flex items-center">
         <ul className=" flex p-4 m-4">
-          {/*<li className="px-4">Online Status : {onlineStatus ? "🟢" : "🔴"}</li>*/}
+          <li className="px-4">Online Status : {onlineStatus ? "🟢" : "🔴"}</li>
           <li className="px-4">
             <Link to="./">Home</Link>
           </li>
@@ -37,21 +37,28 @@ const Header = () => {
           <li className="px-4">
             <Link to="./grocery">Grocery</Link>
           </li>
-          <li className="px-4 font-bold">
-            <Link to="./cart">Cart - ({cartItems.length} items) </Link>
+          <li className="px-4 font-bold flex">
+            <Link to="./cart">
+              <img
+                className="w-6"
+                src="https://cdn.icon-icons.com/icons2/2645/PNG/512/cart_icon_160296.png"
+              />{" "}
+              <span>({cartItems.length})</span>
+            </Link>
           </li>
-          <button
-            className="login"
-            onClick={() => {
-              btnNameReact === "Login"
-                ? setBtnNameReact("Logout")
-                : setBtnNameReact("Login");
-            }}
-          >
-            {btnNameReact}
-          </button>
+          <li className="px-4">
+            <button
+              className="bg-white px-2 rounded-lg font-semibold"
+              onClick={() => {
+                btnNameReact === "Login"
+                  ? setBtnNameReact("Logout")
+                  : setBtnNameReact("Login");
+              }}
+            >
+              {btnNameReact}
+            </button>
+          </li>
           <li className="px-4 font-bold">{loggedInUser}</li>
-          <li className="px-4">Online Status : {onlineStatus ? "🟢" : "🔴"}</li>
         </ul>
       </div>
     </div>
