@@ -38,14 +38,15 @@ const Body = () => {
   const onlineStatus = useOnlineStatus();
   if (onlineStatus === false) {
     return (
-      <h1>Looks like you're Offline. Please check your internet connection</h1>
+      <h1 className="p-2 m-2 text-lg">
+        Looks like you're Offline. Please check your internet connection 🛜⁉️
+      </h1>
     );
   }
 
   const { loggedInUser, setUserName } = useContext(UserContext);
 
   if (listOfRestaurants.length === 0) {
-    console.log("shimmer......");
     return <Shimmer />;
   }
 

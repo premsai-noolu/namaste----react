@@ -26,7 +26,7 @@ const ItemList = ({ items }) => {
           <div className="w-3/12 p-4">
             <div className="absolute">
               <button
-                className="p-2 mx-16 text-white bg-black rounded-lg shadow-lg"
+                className="p-2 mx-16 text-white bg-black rounded-lg shadow-lg hover:bg-gray-100 hover:text-black hover:shadow-lg"
                 onClick={() => handleAddItem(item)}
               >
                 Add +
