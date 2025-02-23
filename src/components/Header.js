@@ -18,12 +18,12 @@ const Header = () => {
 
   const cartItems = useSelector((store) => store.cart.items);
   return (
-    <div className="flex justify-between shadow-lg bg-pink-50 sm:bg-yellow-100 lg:bg-orange-100">
+    <div className="flex justify-between items-center shadow-lg bg-pink-50 sm:bg-yellow-100 lg:bg-orange-100">
       <div className="logo-container">
         <img className="w-20 mx-4" src={LOGO_URL} />
         <p className="font-bold px-6 mb-2 text-red-900 text-xl">Foodify</p>
       </div>
-      <div className="flex items-center">
+      <div className="flex">
         <ul className=" flex p-4 m-4">
           <li className="px-4">Online Status : {onlineStatus ? "🟢" : "🔴"}</li>
           <li className="px-4">
@@ -38,11 +38,11 @@ const Header = () => {
           <li className="px-4">
             <Link to="./grocery">Grocery</Link>
           </li>
-          <li className="px-4 font-bold flex">
+          <li className="px-4 font-bold">
             <Link to="./cart">
               <img
                 className="w-6"
-                src="https://cdn.icon-icons.com/icons2/2645/PNG/512/cart_icon_160296.png"
+                src="https://i.pinimg.com/736x/f2/12/4e/f2124e83e9fd8ddeb31ac7cdb59f544c.jpg"
               />{" "}
               <span>({cartItems.length})</span>
             </Link>

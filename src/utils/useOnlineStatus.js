@@ -4,6 +4,7 @@ const useOnlineStatus = () => {
   const [onlineStatus, setOnlineStatus] = useState(true);
 
   useEffect(() => {
+    console.log("I'm running");
     window.addEventListener("offline", () => {
       setOnlineStatus(false);
     });
@@ -17,4 +18,4 @@ const useOnlineStatus = () => {
   return onlineStatus;
 };
 
-export default useOnlineStatus;  
+export default useOnlineStatus;

@@ -22,7 +22,6 @@ const ItemList = ({ items }) => {
             </div>
             <p className="text-xs">{item.card.info.description}</p>
           </div>
-
           <div className="w-3/12 p-4">
             <div className="absolute">
               <button

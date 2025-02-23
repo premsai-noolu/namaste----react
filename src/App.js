@@ -16,7 +16,7 @@ import Cart from "./components/Cart";
 
 const Grocery = lazy(() => import("./components/Grocery"));
 const AppLayout = () => {
-  const [userName, setUserName] = useState();
+  const [loggedInUser, setUserName] = useState("");
   useEffect(() => {
     const data = {
       name: "Prem Sai",
@@ -25,7 +25,7 @@ const AppLayout = () => {
   }, []);
   return (
     <Provider store={appStore}>
-      <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
+      <UserContext.Provider value={{ loggedInUser, setUserName: setUserName }}>
         <div className="app">
           <Header />
           <Outlet />

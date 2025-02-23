@@ -20,7 +20,7 @@ const Body = () => {
 
   const fetchData = async () => {
     const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.6868159&lng=83.2184815&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
     const json = await data.json();
     console.log(
@@ -28,11 +28,11 @@ const Body = () => {
     );
 
     setListOfRestaurants(
-      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
 
     setFilteredRestaurant(
-      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
   const onlineStatus = useOnlineStatus();
@@ -79,7 +79,7 @@ const Body = () => {
             className="px-4 py-2 bg-gray-100 rounded-lg"
             onClick={() => {
               const filteredList = listOfRestaurants.filter(
-                (res) => res.info.avgRating > 4.5
+                (res) => res.info.avgRating > 4.2
               );
               {
                 /*setListOfRestaurants(filteredList);*/
@@ -91,8 +91,7 @@ const Body = () => {
           </button>
         </div>
 
-        {/*
-        <div className="search m-4 p-4 flex items-center">
+        {/* <div className="search m-4 p-4 flex items-center">
           <label>UserName : </label>
           <input
             className="border border-black p-2"
@@ -100,8 +99,7 @@ const Body = () => {
             value={loggedInUser}
             onChange={(e) => setUserName(e.target.value)}
           />
-        </div>
-          */}
+        </div> */}
       </div>
       <div className="flex flex-wrap">
         {filteredRestaurant.map((restaurant) => (
