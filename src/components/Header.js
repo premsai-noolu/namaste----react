@@ -43,7 +43,7 @@ const Header = () => {
               <img
                 className="w-6"
                 src="https://i.pinimg.com/736x/f2/12/4e/f2124e83e9fd8ddeb31ac7cdb59f544c.jpg"
-              />{" "}
+              />
               <span>({cartItems.length})</span>
             </Link>
           </li>
